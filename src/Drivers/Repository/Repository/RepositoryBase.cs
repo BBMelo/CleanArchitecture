@@ -1,19 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using vxTel.Domain.Interfaces;
 using vxTel.Repository.Context;
 
-namespace vxTel.Repository
+namespace vxTel.Repository.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         protected readonly VxTelContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        public Repository(VxTelContext context)
+        public RepositoryBase(VxTelContext context)
         {
             Db = context;
             DbSet = Db.Set<TEntity>();
