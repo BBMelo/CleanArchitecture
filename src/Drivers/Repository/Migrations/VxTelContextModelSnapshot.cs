@@ -25,66 +25,94 @@ namespace vxTel.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<decimal>("AcrescimentoExcedente")
+                        .HasColumnName("TaxaAcrescimo");
+
                     b.Property<DateTime>("ChangedAT")
-                        .HasColumnName("PDATA_ALTERACAO")
+                        .HasColumnName("DATA_ALTERACAO")
                         .HasColumnType("DATETIME");
 
                     b.Property<DateTime>("CreateAT")
-                        .HasColumnName("PDATA_CRIACAO")
+                        .HasColumnName("DATA_CRIACAO")
                         .HasColumnType("DATETIME");
 
+                    b.Property<int>("EPlanoTelefonia")
+                        .HasColumnName("TIPO");
+
                     b.Property<Guid>("Guid")
-                        .HasColumnName("PHASHCODE");
+                        .HasColumnName("HASHCODE");
 
-                    b.Property<decimal>("PrecoPorMinuto")
-                        .HasColumnName("PPRECO_MINUTO")
-                        .HasColumnType("decimal(3,2)");
-
-                    b.Property<int>("TipoPlano")
-                        .HasColumnName("PTIPO_PLANO");
+                    b.Property<int>("MinutosPraFalarDeGraca")
+                        .HasColumnName("MinutoPlano");
 
                     b.HasKey("Id");
 
                     b.ToTable("PlanoTelefonia");
                 });
 
-            modelBuilder.Entity("vxTel.Domain.Entities.PlanoTelefonia", b =>
+            modelBuilder.Entity("vxTel.Domain.Entities.TarifaLigacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ChangedAT")
+                        .HasColumnName("DATA_ALTERACAO")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<DateTime>("CreateAT")
+                        .HasColumnName("DATA_CRIACAO")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnName("HASHCODE");
+
+                    b.Property<decimal>("TarifaPorMinuto")
+                        .HasColumnName("PRECO_MINUTO")
+                        .HasColumnType("decimal(3,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TarifaTelefonia");
+                });
+
+            modelBuilder.Entity("vxTel.Domain.Entities.TarifaLigacao", b =>
                 {
                     b.OwnsOne("vxTel.Domain.ValueObjects.DDD", "Destino", b1 =>
                         {
-                            b1.Property<int>("PlanoTelefoniaId")
+                            b1.Property<int>("TarifaLigacaoId")
                                 .ValueGeneratedOnAdd()
                                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                             b1.Property<int>("Code")
-                                .HasColumnName("PDDD_DESTINO");
+                                .HasColumnName("DDD_DESTINO");
 
-                            b1.HasKey("PlanoTelefoniaId");
+                            b1.HasKey("TarifaLigacaoId");
 
-                            b1.ToTable("PlanoTelefonia");
+                            b1.ToTable("TarifaTelefonia");
 
-                            b1.HasOne("vxTel.Domain.Entities.PlanoTelefonia")
+                            b1.HasOne("vxTel.Domain.Entities.TarifaLigacao")
                                 .WithOne("Destino")
-                                .HasForeignKey("vxTel.Domain.ValueObjects.DDD", "PlanoTelefoniaId")
+                                .HasForeignKey("vxTel.Domain.ValueObjects.DDD", "TarifaLigacaoId")
                                 .OnDelete(DeleteBehavior.Cascade);
                         });
 
                     b.OwnsOne("vxTel.Domain.ValueObjects.DDD", "Origem", b1 =>
                         {
-                            b1.Property<int>("PlanoTelefoniaId")
+                            b1.Property<int>("TarifaLigacaoId")
                                 .ValueGeneratedOnAdd()
                                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                             b1.Property<int>("Code")
-                                .HasColumnName("PDDD_ORIGEM");
+                                .HasColumnName("DDD_ORIGEM");
 
-                            b1.HasKey("PlanoTelefoniaId");
+                            b1.HasKey("TarifaLigacaoId");
 
-                            b1.ToTable("PlanoTelefonia");
+                            b1.ToTable("TarifaTelefonia");
 
-                            b1.HasOne("vxTel.Domain.Entities.PlanoTelefonia")
+                            b1.HasOne("vxTel.Domain.Entities.TarifaLigacao")
                                 .WithOne("Origem")
-                                .HasForeignKey("vxTel.Domain.ValueObjects.DDD", "PlanoTelefoniaId")
+                                .HasForeignKey("vxTel.Domain.ValueObjects.DDD", "TarifaLigacaoId")
                                 .OnDelete(DeleteBehavior.Cascade);
                         });
                 });

@@ -1,6 +1,6 @@
 ﻿namespace vxTel.Domain.Enumerators
 {
-    public enum TipoPlanoTelefonia
+    public enum EPlanoTelefonia
     {
         PlanoPadrao = 0,
         PlanoFaleMais30 = 1,

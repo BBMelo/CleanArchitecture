@@ -1,10 +1,11 @@
 ﻿using FluentValidation.Results;
 using System.Collections.Generic;
 using System.Linq;
+using vxTel.Domain.Interfaces;
 
 namespace vxTel.Domain.Notifications
 {
-    public sealed class Notification
+    public sealed class Notification : INotification
     {
         private readonly List<NotificationBase> _notifications;
         public IReadOnlyCollection<NotificationBase> Notifications { get { return _notifications; } }
@@ -19,6 +20,11 @@ namespace vxTel.Domain.Notifications
         public void AddNotifications(IList<NotificationBase> notifications) => _notifications.AddRange(notifications);
         public void AddNotifications(ICollection<NotificationBase> notifications) => _notifications.AddRange(notifications);
         public void AddNotifications(ValidationResult validationResult) => validationResult.Errors?.ToList().ForEach(f => { AddNotification(f.ErrorCode, f.ErrorMessage); });
+
+        public void Add(string message)
+        {
+            AddNotification(new NotificationBase(string.Empty, message));
+        }
     }
 
     public sealed class NotificationBase

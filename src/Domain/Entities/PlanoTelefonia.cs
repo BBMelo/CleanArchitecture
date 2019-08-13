@@ -1,14 +1,15 @@
-﻿using vxTel.Domain.Bases;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using vxTel.Domain.Bases;
 using vxTel.Domain.Enumerators;
-using vxTel.Domain.ValueObjects;
 
 namespace vxTel.Domain.Entities
 {
     public class PlanoTelefonia : EntityBase
-    {        
-        public DDD Origem { get; protected set; }        
-        public DDD Destino { get; protected set; }
-        public decimal PrecoPorMinuto { get; protected set; }
-        public TipoPlanoTelefonia TipoPlano { get; protected set; }
+    {
+        public EPlanoTelefonia EPlanoTelefonia { get; protected set; }
+        public int MinutosPraFalarDeGraca { get; protected set; }
+        public decimal AcrescimentoExcedente { get; protected set; }
     }
 }

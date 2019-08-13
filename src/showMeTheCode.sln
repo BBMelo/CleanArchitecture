@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vxTel.Repository", "Drivers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vxTel.CrossCutting.IoC", "Drivers\CrossCutting\vxTel.CrossCutting.IoC.csproj", "{8533144C-158B-4EA4-AAFB-7150BCDEE475}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vxTel.Unit.Test", "__tests__\UnitaryTests\vxTel.Unit.Test.csproj", "{020915AF-FDFE-4719-B0E6-416C5FD40E42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vxTel.Integration.Test", "__tests__\Integration\vxTel.Integration.Test.csproj", "{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{8533144C-158B-4EA4-AAFB-7150BCDEE475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8533144C-158B-4EA4-AAFB-7150BCDEE475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8533144C-158B-4EA4-AAFB-7150BCDEE475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020915AF-FDFE-4719-B0E6-416C5FD40E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020915AF-FDFE-4719-B0E6-416C5FD40E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020915AF-FDFE-4719-B0E6-416C5FD40E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020915AF-FDFE-4719-B0E6-416C5FD40E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +71,8 @@ Global
 		{E4848CB8-BF81-43FD-AFCB-046685D3367F} = {A4C0AD7C-058D-4DD1-958E-0CFD76C6CF51}
 		{CD438F4C-0376-40F3-96C6-9AC63D28BAE5} = {9590E44E-9CAA-4F94-9A45-CEA9B39358C6}
 		{8533144C-158B-4EA4-AAFB-7150BCDEE475} = {9590E44E-9CAA-4F94-9A45-CEA9B39358C6}
+		{020915AF-FDFE-4719-B0E6-416C5FD40E42} = {755C9D08-5DF7-4ACE-B7B2-EB522F82C9C1}
+		{F12EC936-6CEC-40D6-87BF-EB4F4F2848EC} = {755C9D08-5DF7-4ACE-B7B2-EB522F82C9C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1887AAB8-59C7-4E79-928E-697016F0EA29}

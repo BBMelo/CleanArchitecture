@@ -9,6 +9,6 @@ namespace vxTel.Repository.Repository
         public PlanoTelefoniaRepository(VxTelContext context) : base(context)
         {
 
-        }
+        }       
     }
 }

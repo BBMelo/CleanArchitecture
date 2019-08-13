@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validator\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
 
 </Project>
