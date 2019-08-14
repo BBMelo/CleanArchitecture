@@ -28,15 +28,15 @@ namespace vxTel.Unit.Test.StepDefinitions
         }
         
         [Given(@"Quando eu informar corretamente os dados de origem\|destino\|duracao\|plano (.*)\|(.*)\|(.*)\|(.*)")]
-        public void DadoQuandoEuInformarCorretamenteOsDadosDeOrigemDestinoDuracaoPlano(int origem, int destino, int duracao, int plano)
+        public void DadoQuandoEuInformarCorretamenteOsDadosDeOrigemDestinoDuracaoPlano(int dddOrigem, int dddDestino, int duracaoEmMinutos, int planoSelecionado)
         {
-            resultado = _calcularValorLigacao.Execute(destino, origem, duracao, (EPlanoTelefonia)plano);            
+            resultado = _calcularValorLigacao.Execute(dddOrigem, dddDestino, duracaoEmMinutos, (EPlanoTelefonia)planoSelecionado);            
         }
         
         [Then(@"O resultado do calculo deve ser (.*)")]
         public void EntaoOResultadoDoCalculoDeveSer_(string valorDaLigacao)
         {            
-            Assert.Equal(valorDaLigacao, resultado.ToString());
+            Assert.Equal(valorDaLigacao, resultado.ToString("N2"));
         }
     }
 }

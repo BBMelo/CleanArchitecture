@@ -4,6 +4,6 @@ namespace vxTel.Adapter.Application.Contract.PlanoTelefonia
 {
     public interface ICalcularValorLigacao
     {
-        decimal Execute(int destino, int origem, int minuto, EPlanoTelefonia plano);
+        decimal Execute(int dddOrigem, int dddDestino, int duracaoEmMinutos, EPlanoTelefonia planoSelecionado);
     }
 }
