@@ -9,7 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Adapter\Application\vxTel.Adapter.Application.csproj" />
     <ProjectReference Include="..\..\Domain\vxTel.Domain.csproj" />
+    <ProjectReference Include="..\..\UseCases\vxTel.UseCase.csproj" />
     <ProjectReference Include="..\Repository\vxTel.Repository.csproj" />
   </ItemGroup>
 

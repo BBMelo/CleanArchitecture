@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Adapter\Application\vxTel.Adapter.Application.csproj" />
     <ProjectReference Include="..\Domain\vxTel.Domain.csproj" />
   </ItemGroup>
 

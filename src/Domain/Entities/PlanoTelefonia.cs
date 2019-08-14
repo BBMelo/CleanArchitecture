@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using vxTel.Domain.Bases;
 using vxTel.Domain.Enumerators;
+using vxTel.Domain.ValueObjects;
 
 namespace vxTel.Domain.Entities
 {
@@ -10,6 +11,6 @@ namespace vxTel.Domain.Entities
     {
         public EPlanoTelefonia EPlanoTelefonia { get; protected set; }
         public int MinutosPraFalarDeGraca { get; protected set; }
-        public decimal AcrescimentoExcedente { get; protected set; }
+        public decimal AcrescimentoExcedente { get; protected set; }       
     }
 }
