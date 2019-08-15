@@ -25,7 +25,7 @@ namespace vxTel.Adapter.Application.Facade
                                    .Execute(faleMaisViewModel.CodigoOrigem,
                                             faleMaisViewModel.CodigoDestino,
                                             faleMaisViewModel.TempoLigacao,
-                                            EPlanoTelefonia.PlanoPadrao)
+                                            (EPlanoTelefonia)faleMaisViewModel.PlanoFaleMais)
                                    .ToString("N2"));
             
             return faleMaisViewModel;
@@ -44,8 +44,10 @@ namespace vxTel.Adapter.Application.Facade
                 faleMaisViewModel.CustoSemPlano =
                 string.Format("R$ 0,00");
             else
-                faleMaisViewModel.CustoComPlano = string.Format("R$ {0}",tarifas.FirstOrDefault().ToString("N2"));
-                faleMaisViewModel.CustoSemPlano = string.Format("R$ 0,00");
+            {                
+                faleMaisViewModel.CustoSemPlano = string.Format("R$ {0}", tarifas.First().ToString("N2"));
+                faleMaisViewModel.CustoComPlano = string.Format("R$ {0}", tarifas.Last().ToString("N2"));
+            }               
 
             return faleMaisViewModel;
         }

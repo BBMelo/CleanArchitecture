@@ -87,13 +87,13 @@ namespace vxTel.Unit.Test.Feature
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 11 e destino 16 sem nenhum plano" +
                     " FaleMais da VxTel", null, new string[] {
                         "basic"});
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 6
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 11|16|20" +
                     "|0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 8
+#line 7
 testRunner.Then("O resultado do calculo deve ser 38,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -108,13 +108,13 @@ testRunner.Then("O resultado do calculo deve ser 38,00", ((string)(null)), ((Tec
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 11 e destino 17 sem nenhum plano" +
                     " FaleMais da VxTel", null, ((string[])(null)));
-#line 10
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 11
+#line 10
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 11|17|80" +
                     "|0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 12
+#line 11
 testRunner.Then("O resultado do calculo deve ser 136,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -129,13 +129,13 @@ testRunner.Then("O resultado do calculo deve ser 136,00", ((string)(null)), ((Te
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 18 e destino 11 sem nenhum plano" +
                     " FaleMais da VxTel", null, ((string[])(null)));
-#line 14
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
+#line 14
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 18|11|20" +
                     "0|0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 16
+#line 15
 testRunner.Then("O resultado do calculo deve ser 380,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -150,13 +150,13 @@ testRunner.Then("O resultado do calculo deve ser 380,00", ((string)(null)), ((Te
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 18 e destino 17 sem nenhum plano" +
                     " FaleMais da VxTel", null, ((string[])(null)));
-#line 18
+#line 17
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 19
+#line 18
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 18|17|10" +
                     "0|0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 20
+#line 19
 testRunner.Then("O resultado do calculo deve ser 0,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -171,13 +171,13 @@ testRunner.Then("O resultado do calculo deve ser 0,00", ((string)(null)), ((Tech
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 11 e destino 16 com o plano Fale" +
                     "Mais30 VxTel", null, ((string[])(null)));
-#line 22
+#line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 23
+#line 22
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 11|16|20" +
                     "|1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 24
+#line 23
 testRunner.Then("O resultado do calculo deve ser 0,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -192,13 +192,13 @@ testRunner.Then("O resultado do calculo deve ser 0,00", ((string)(null)), ((Tech
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 11 e destino 17 com o plano Fale" +
                     "Mais60 VxTel", null, ((string[])(null)));
-#line 26
+#line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 27
+#line 26
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 11|17|80" +
                     "|2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 28
+#line 27
 testRunner.Then("O resultado do calculo deve ser 37,40", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -213,13 +213,13 @@ testRunner.Then("O resultado do calculo deve ser 37,40", ((string)(null)), ((Tec
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 18 e destino 11 com o plano x Fa" +
                     "leMais120 VxTel", null, ((string[])(null)));
-#line 30
+#line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 31
+#line 30
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 18|11|20" +
                     "0|3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 32
+#line 31
 testRunner.Then("O resultado do calculo deve ser 167,20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
@@ -234,13 +234,13 @@ testRunner.Then("O resultado do calculo deve ser 167,20", ((string)(null)), ((Te
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calcular o valor de uma ligação com o ddd origem 18 e destino 17 com o plano x Fa" +
                     "leMais30 VxTel", null, ((string[])(null)));
-#line 34
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 35
+#line 34
 testRunner.Given("Quando eu informar corretamente os dados de origem|destino|duracao|plano 18|17|10" +
                     "0|1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dados ");
-#line 36
+#line 35
 testRunner.Then("O resultado do calculo deve ser 0,00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();

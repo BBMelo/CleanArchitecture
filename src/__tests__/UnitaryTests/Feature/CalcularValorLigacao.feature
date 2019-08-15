@@ -1,5 +1,4 @@
 ﻿#language: pt-br
-
 Funcionalidade: Eu, enquanto usuário quero saber quanto irei pagar em uma ligação.                
 
 @basic

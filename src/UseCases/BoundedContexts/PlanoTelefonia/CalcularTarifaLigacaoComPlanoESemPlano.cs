@@ -17,8 +17,8 @@ namespace vxTel.UseCase.BoundedContexts.PlanoTelefonia
         {
             return new List<decimal>()
             {
-                _useCase.Execute(dddOrigem, dddDestino, duracaoEmMinutos, planoSelecionado),
-                _useCase.Execute(dddOrigem, dddDestino, duracaoEmMinutos, (int)EPlanoTelefonia.PlanoPadrao)
+               _useCase.Execute(dddOrigem, dddDestino, duracaoEmMinutos, (int)EPlanoTelefonia.PlanoPadrao),
+               _useCase.Execute(dddOrigem, dddDestino, duracaoEmMinutos, planoSelecionado)
             };
         }
     }
