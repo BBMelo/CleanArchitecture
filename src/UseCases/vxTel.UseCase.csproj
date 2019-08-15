@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Adapter\Application\vxTel.Adapter.Application.csproj" />
     <ProjectReference Include="..\Domain\vxTel.Domain.csproj" />
   </ItemGroup>
 

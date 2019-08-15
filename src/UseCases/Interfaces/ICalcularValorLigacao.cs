@@ -1,6 +1,6 @@
 ﻿using vxTel.Domain.Enumerators;
 
-namespace vxTel.Adapter.Application.Contract.PlanoTelefonia
+namespace vxTel.UseCase.Interfaces
 {
     public interface ICalcularValorLigacao
     {

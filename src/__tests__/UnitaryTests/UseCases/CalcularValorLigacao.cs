@@ -1,14 +1,14 @@
 ﻿using TechTalk.SpecFlow;
-using vxTel.Adapter.Application.Contract.PlanoTelefonia;
 using vxTel.Domain.Enumerators;
 using vxTel.Domain.Interfaces;
 using vxTel.Domain.Notifications;
 using vxTel.Repository.Context;
 using vxTel.Repository.Repository;
+using vxTel.UseCase.Interfaces;
 using vxTel.UseCase.PlanoTelefoniaUseCase;
 using Xunit;
 
-namespace vxTel.Unit.Test.StepDefinitions
+namespace vxTel.Unit.Test.UseCases
 {
     [Binding]
     public class CalcularValorLigacao

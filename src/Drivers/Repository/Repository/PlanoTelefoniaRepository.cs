@@ -1,4 +1,6 @@
-﻿using vxTel.Domain.Entities;
+﻿using System.Linq;
+using vxTel.Domain.Entities;
+using vxTel.Domain.Enumerators;
 using vxTel.Domain.Interfaces;
 using vxTel.Repository.Context;
 
@@ -10,5 +12,13 @@ namespace vxTel.Repository.Repository
         {
 
         }       
+
+        public PlanoTelefonia ObterPlanoTelefonia(EPlanoTelefonia planoTelefonia)
+        {
+            return GetAll()
+                  .Where(x => x.EPlanoTelefonia == planoTelefonia)
+                  .DefaultIfEmpty(new PlanoTelefonia())
+                  .FirstOrDefault();          
+        }
     }
 }

@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Domain\vxTel.Domain.csproj" />
+    <ProjectReference Include="..\..\UseCases\vxTel.UseCase.csproj" />
   </ItemGroup>
 
 </Project>

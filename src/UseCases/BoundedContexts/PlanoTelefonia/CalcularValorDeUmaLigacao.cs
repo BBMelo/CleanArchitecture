@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using vxTel.Adapter.Application.Contract.PlanoTelefonia;
-using vxTel.Domain.Entities;
-using vxTel.Domain.Enumerators;
+﻿using vxTel.Domain.Enumerators;
 using vxTel.Domain.Interfaces;
+using vxTel.UseCase.Interfaces;
 
 namespace vxTel.UseCase.PlanoTelefoniaUseCase
 {
@@ -22,20 +20,10 @@ namespace vxTel.UseCase.PlanoTelefoniaUseCase
         }   
         
         public decimal Execute(int dddOrigem, int dddDestino, int duracaoEmMinutos, EPlanoTelefonia planoSelecionado)
-        {            
-            var tarifa = _tarifaLigacaoRepository
-                         .GetAll()
-                         .Where(x => x.Destino.Code == dddDestino && x.Origem.Code == dddOrigem)
-                         .DefaultIfEmpty(new TarifaLigacao())
-                         .FirstOrDefault()
-                         .TarifaPorMinuto;
+        {
+            decimal tarifa = _tarifaLigacaoRepository.ObterTarifaLigacao(dddDestino,dddOrigem);                        
 
-            var _plano = _planoTelefoniaRepository
-                         .GetAll()
-                         .Where(x => x.EPlanoTelefonia == planoSelecionado)
-                         .DefaultIfEmpty(new PlanoTelefonia())
-                         .DefaultIfEmpty()
-                         .FirstOrDefault();
+            var _plano = _planoTelefoniaRepository.ObterPlanoTelefonia(planoSelecionado);                        
                                    
             return _plano.MinutosPraFalarDeGraca == default(int)
             ? (tarifa * duracaoEmMinutos) 
