@@ -4,11 +4,11 @@ using vxTel.UseCase.Interfaces;
 
 namespace vxTel.UseCase.BoundedContexts.PlanoTelefonia
 {
-    public class CalcularTarifaLigacaoComPlanoESemPlano : ICalcularTarifaLigacaoComPlanoESemPlano
+    public class CalcularTarifaLigacaoComPlanoESemPlano : ICompararPrecoEntrePlano
     {
-        private readonly ICalcularValorLigacao _useCase;
+        private readonly ICalcularPrecoTarifaPorPlano _useCase;
 
-        public CalcularTarifaLigacaoComPlanoESemPlano(ICalcularValorLigacao calcularValorLigacao)
+        public CalcularTarifaLigacaoComPlanoESemPlano(ICalcularPrecoTarifaPorPlano calcularValorLigacao)
         {
             _useCase = calcularValorLigacao;
         }

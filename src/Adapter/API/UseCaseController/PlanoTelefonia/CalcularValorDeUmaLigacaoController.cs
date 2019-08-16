@@ -2,23 +2,23 @@
 using vxTel.Adapter.Application.Interfaces;
 using vxTel.Adapter.Application.ViewModel;
 
-namespace vxTel.WebServiceAdapter.UseCaseController.PlamoTelefonia
+namespace vxTel.WebServiceAdapter.UseCaseController.PlanoTelefonia
 {
     [Route("api/v1/falemais")]
     [ApiController]
     public class CalcularValorDeUmaLigacaoController : ControllerBase
     {
-        private readonly IPlanoTelefoniaApplication _planoTelefoniaApplication;
+        private readonly IPlanoTelefoniaApplication _useCase;
 
         public CalcularValorDeUmaLigacaoController(IPlanoTelefoniaApplication planoTelefoniaApplication)
         {
-            _planoTelefoniaApplication = planoTelefoniaApplication;
+            _useCase = planoTelefoniaApplication;
         }
         
         [HttpGet("calcular-tarifa-ligacao")]
-        public IActionResult UseCase([FromQuery]FaleMaisViewModel viewModel)
+        public IActionResult UseCase(FaleMaisViewModel viewModel)
         {
-            return Ok(_planoTelefoniaApplication.CalcularCustoDeUmaLigacao(viewModel));
+            return Ok(_useCase.CalcularLigacaoPorPlano(viewModel));
         }
     }
 }

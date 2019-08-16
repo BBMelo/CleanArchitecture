@@ -5,7 +5,7 @@ using vxTel.Domain.Interfaces;
 
 namespace vxTel.Domain.Notifications
 {
-    public sealed class Notification : INotification
+    public sealed class Notification 
     {
         private readonly List<NotificationBase> _notifications;
         public IReadOnlyCollection<NotificationBase> Notifications { get { return _notifications; } }

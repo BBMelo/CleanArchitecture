@@ -12,4 +12,11 @@
     <ProjectReference Include="..\Domain\vxTel.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BoundedContexts\PlanoTelefonia\Cadastro\" />
+    <Folder Include="BoundedContexts\PlanoTelefonia\Cancelamento\" />
+    <Folder Include="BoundedContexts\PlanoTelefonia\Campanha\" />
+    <Folder Include="BoundedContexts\PlanoTelefonia\Promocao\" />
+  </ItemGroup>
+
 </Project>

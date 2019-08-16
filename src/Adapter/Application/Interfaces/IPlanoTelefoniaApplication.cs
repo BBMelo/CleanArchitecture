@@ -4,7 +4,7 @@ namespace vxTel.Adapter.Application.Interfaces
 {
     public interface IPlanoTelefoniaApplication
     {
-        FaleMaisViewModel CalcularCustoDeUmaLigacao(FaleMaisViewModel faleMaisViewModel);
-        FaleMaisViewModel CalcularCustoDeUmaLigacaoComPlanoFaleMais(FaleMaisViewModel faleMaisViewModel);
+        FaleMaisViewModel CalcularLigacaoPorPlano(FaleMaisViewModel faleMaisViewModel);
+        FaleMaisViewModel CompararPrecoEntrePlano(FaleMaisViewModel faleMaisViewModel);
     }
 }

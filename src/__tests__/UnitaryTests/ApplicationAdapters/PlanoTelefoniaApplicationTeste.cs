@@ -15,18 +15,18 @@ namespace vxTel.Unit.Test.ApplicationAdapters
     public class PlanoTelefoniaApplicationTeste
     {
         private IPlanoTelefoniaApplication _planoTelefoniaApplication;
-        private ICalcularTarifaLigacaoComPlanoESemPlano _calcularTarifaLigacaoComPlanoESemPlano;
-        private ICalcularValorLigacao _calcularValorLigacao;
+        private ICompararPrecoEntrePlano _calcularTarifaLigacaoComPlanoESemPlano;
+        private ICalcularPrecoTarifaPorPlano _calcularValorLigacao;
         private IPlanoTelefoniaRepository _planoTelefoniaRepository;
         private ITarifaLigacaoRepository _tarifaLigacaoRepository;
-        private INotification _notification;
+        private Notification _notification;
 
         public PlanoTelefoniaApplicationTeste()
         {            
             _tarifaLigacaoRepository = new TarifaLigacaoRepository(new VxTelContext());
             _planoTelefoniaRepository = new PlanoTelefoniaRepository(new VxTelContext());
             _notification = new Notification();
-            _calcularValorLigacao = new CalcularValorDeUmaLigacao(_planoTelefoniaRepository, _notification, _tarifaLigacaoRepository);
+            _calcularValorLigacao = new CalcularPrecoTarifaPorPlano(_planoTelefoniaRepository, _notification, _tarifaLigacaoRepository);
             _calcularTarifaLigacaoComPlanoESemPlano = new CalcularTarifaLigacaoComPlanoESemPlano(_calcularValorLigacao);
             _planoTelefoniaApplication = new PlanoTelefoniaFacade(_calcularValorLigacao, _calcularTarifaLigacaoComPlanoESemPlano);
         }
@@ -47,7 +47,7 @@ namespace vxTel.Unit.Test.ApplicationAdapters
             };
 
             //When
-            _planoTelefoniaApplication.CalcularCustoDeUmaLigacao(faleMaisViewModel);
+            _planoTelefoniaApplication.CalcularLigacaoPorPlano(faleMaisViewModel);
 
             //Then
             Assert.Equal(resultado, faleMaisViewModel.CustoSemPlano);
@@ -88,7 +88,7 @@ namespace vxTel.Unit.Test.ApplicationAdapters
             };
 
             //When
-            _planoTelefoniaApplication.CalcularCustoDeUmaLigacao(faleMaisViewModel);
+            _planoTelefoniaApplication.CalcularLigacaoPorPlano(faleMaisViewModel);
 
             //Then
             Assert.Equal(resultado, faleMaisViewModel.CustoSemPlano);
@@ -129,7 +129,7 @@ namespace vxTel.Unit.Test.ApplicationAdapters
             };
 
             //When
-            _planoTelefoniaApplication.CalcularCustoDeUmaLigacaoComPlanoFaleMais(faleMaisViewModel);
+            _planoTelefoniaApplication.CompararPrecoEntrePlano(faleMaisViewModel);
 
             //Then
             Assert.Equal(resultadoComPlano, faleMaisViewModel.CustoComPlano);

@@ -2,7 +2,7 @@
 
 namespace vxTel.UseCase.Interfaces
 {
-    public interface ICalcularValorLigacao
+    public interface ICalcularPrecoTarifaPorPlano
     {
         decimal Execute(int dddOrigem, int dddDestino, int duracaoEmMinutos, EPlanoTelefonia planoSelecionado);
     }

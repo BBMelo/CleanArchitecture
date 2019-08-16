@@ -13,10 +13,10 @@ namespace vxTel.Unit.Test.UseCases
     [Binding]
     public class CalcularValorLigacao
     {
-        private ICalcularValorLigacao _calcularValorLigacao;
+        private ICalcularPrecoTarifaPorPlano _calcularValorLigacao;
         private IPlanoTelefoniaRepository _planoTelefoniaRepository;
         private ITarifaLigacaoRepository _tarifaLigacaoRepository;
-        private INotification _notification;
+        private Notification _notification;
         private decimal resultado { get; set; }
 
         public CalcularValorLigacao()
@@ -24,7 +24,7 @@ namespace vxTel.Unit.Test.UseCases
             _tarifaLigacaoRepository = new TarifaLigacaoRepository(new VxTelContext());
             _planoTelefoniaRepository = new PlanoTelefoniaRepository(new VxTelContext());
             _notification = new Notification();
-            _calcularValorLigacao = new CalcularValorDeUmaLigacao(_planoTelefoniaRepository, _notification, _tarifaLigacaoRepository);
+            _calcularValorLigacao = new CalcularPrecoTarifaPorPlano(_planoTelefoniaRepository, _notification, _tarifaLigacaoRepository);
         }
         
         [Given(@"Quando eu informar corretamente os dados de origem\|destino\|duracao\|plano (.*)\|(.*)\|(.*)\|(.*)")]

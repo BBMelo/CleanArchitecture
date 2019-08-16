@@ -23,14 +23,15 @@ namespace vxTel.CrossCutting.IoC
             services.AddScoped<ITarifaLigacaoRepository, TarifaLigacaoRepository>();
 
             //usecases
-            services.AddScoped<ICalcularValorLigacao, CalcularValorDeUmaLigacao>();
-            services.AddScoped<ICalcularTarifaLigacaoComPlanoESemPlano, CalcularTarifaLigacaoComPlanoESemPlano>();
+            services.AddScoped<ICalcularPrecoTarifaPorPlano, CalcularPrecoTarifaPorPlano>();
+            services.AddScoped<ICompararPrecoEntrePlano, CalcularTarifaLigacaoComPlanoESemPlano>();
 
             //adapter - applications            
             services.AddScoped<IPlanoTelefoniaApplication, PlanoTelefoniaFacade>();
 
             //notifications
-            services.AddSingleton<INotification, Notification>();
+            //services.AddScoped<INotification, Notification>();
+            services.AddScoped<Notification>();
         }
     }
 }

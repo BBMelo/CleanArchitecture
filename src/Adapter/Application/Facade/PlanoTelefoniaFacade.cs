@@ -8,17 +8,17 @@ namespace vxTel.Adapter.Application.Facade
 {
     public sealed class PlanoTelefoniaFacade : IPlanoTelefoniaApplication
     {
-        private readonly ICalcularValorLigacao _calcularValorLigacao;
-        private readonly ICalcularTarifaLigacaoComPlanoESemPlano _calcularTarifaLigacaoComPlanoESemPlano;
+        private readonly ICalcularPrecoTarifaPorPlano _calcularValorLigacao;
+        private readonly ICompararPrecoEntrePlano _calcularTarifaLigacaoComPlanoESemPlano;
 
-        public PlanoTelefoniaFacade(ICalcularValorLigacao calcularValorLigacao,
-                                    ICalcularTarifaLigacaoComPlanoESemPlano calcularTarifaLigacaoComPlanoESemPlano)
+        public PlanoTelefoniaFacade(ICalcularPrecoTarifaPorPlano calcularValorLigacao,
+                                    ICompararPrecoEntrePlano calcularTarifaLigacaoComPlanoESemPlano)
         {
             _calcularTarifaLigacaoComPlanoESemPlano = calcularTarifaLigacaoComPlanoESemPlano;
             _calcularValorLigacao = calcularValorLigacao;
         }
 
-        public FaleMaisViewModel CalcularCustoDeUmaLigacao(FaleMaisViewModel faleMaisViewModel)
+        public FaleMaisViewModel CalcularLigacaoPorPlano(FaleMaisViewModel faleMaisViewModel)
         {
             faleMaisViewModel
             .CustoSemPlano = string.Format("R$ {0}", _calcularValorLigacao
@@ -31,7 +31,7 @@ namespace vxTel.Adapter.Application.Facade
             return faleMaisViewModel;
         }
 
-        public FaleMaisViewModel CalcularCustoDeUmaLigacaoComPlanoFaleMais(FaleMaisViewModel faleMaisViewModel)
+        public FaleMaisViewModel CompararPrecoEntrePlano(FaleMaisViewModel faleMaisViewModel)
         {
             var tarifas  =  _calcularTarifaLigacaoComPlanoESemPlano
                             .Execute(faleMaisViewModel.CodigoOrigem,
